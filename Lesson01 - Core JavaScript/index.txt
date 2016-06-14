@@ -1,0 +1,263 @@
+
+﻿
+1 + 'a'
+"1a"
+1 - 'a'
+NaN
+9/0
+Infinity
+
+
+Regex
+
+Hide network messages
+All
+Errors
+Warnings
+Info
+Logs
+Debug
+Handled
+﻿
+var a = {
+    color: 'blue',
+    brand: 'dryErase',
+    size: {
+        height: 5,
+        width: 10
+    }
+}
+undefined
+a.brand
+"dryErase"
+a.size.width
+10
+a.price = 9.99
+9.99
+
+
+
+
+Regex
+
+Hide network messages
+All
+Errors
+Warnings
+Info
+Logs
+Debug
+Handled
+﻿
+5 == 5
+true
+5 === 5
+true
+5 === '5'
+false
+5 == '5'
+true
+null === null
+true
+undefined === undefined
+true
+null === undefined
+false
+null == undefined
+true
+
+
+
+Regex
+
+Hide network messages
+All
+Errors
+Warnings
+Info
+Logs
+Debug
+Handled
+﻿
+var b = {
+    name: 'george'
+}
+undefined
+var c = {
+    name: 'george'
+}
+undefined
+b === c
+false
+b == c
+false
+var d = b
+undefined
+b === d
+true
+b.name = 'tommy'
+"tommy"
+d
+Object {name: "tommy"}
+
+
+
+Regex
+
+Hide network messages
+All
+Errors
+Warnings
+Info
+Logs
+Debug
+Handled
+﻿
+function sum(a, b) {
+   return a + b
+}
+undefined
+var result = sum(5, 7);
+undefined
+result
+12
+
+result = sum('george', ' dagher');
+"george dagher"
+var sum = function(a, b) {
+   return a + b;
+}
+undefined
+sum(5, 7);
+12
+
+
+
+Regex
+
+Hide network messages
+All
+Errors
+Warnings
+Info
+Logs
+Debug
+Handled
+﻿
+var myArray = [7, 8, 9, 10, 'hello', {name: 'george'}, [1, 2, 3]]
+undefined
+myArray[4]
+"hello"
+myArray[6][1]
+2
+myArray.push('tom')
+8
+myArray
+[7, 8, 9, 10, "hello", 
+Object
+, 
+Array[3]
+, "tom"]
+myArray.pop()
+"tom"
+myArray
+[7, 8, 9, 10, "hello", 
+Object
+, 
+Array[3]
+]
+myArray.splice(4, 1)
+["hello"]
+myArray
+[7, 8, 9, 10, 
+Object
+, 
+Array[3]
+]
+
+// Closure
+
+function outer(a) {
+	
+	function inner(b) {
+	    return a + b;
+	}
+
+	return inner;
+}
+
+
+var result = outer(5);
+
+var result2 = outer(12);
+
+console.log(result2(10));
+
+console.log(result(10));
+
+// scope inheritence
+
+function a() {
+	var me = {
+	    firstName: 'george',
+	    lastName: 'dagher'
+	};
+	var myDog = {
+	    name: max
+	};
+
+	function b() {
+	    me = {
+	        firstName: 'max'
+	    };
+
+	    me.age = 12;
+	    myDog.age = 12;
+	}
+
+	b();
+	console.log(me);
+	console.log(myDog);
+}
+
+a();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

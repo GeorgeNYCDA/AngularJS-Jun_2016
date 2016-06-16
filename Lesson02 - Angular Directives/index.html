@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+  	<head>
+	  	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.js"></script>
+	  	<script src="index.js"></script>
+	  	<style type="text/css">
+
+			.redClass {
+				color: red;
+			}
+
+			.blueClass {
+				color: blue;
+			}
+
+			.greenClass {
+				color: green;
+			}
+
+			.bold {
+				font-weight: bold;
+			}
+
+	  	</style>
+	</head>
+	<body ng-app="MyApp">
+		<div ng-controller="MyController as myCtrl">
+
+			<h3>ng-class with a string</h3>
+			<input type="text" ng-model="myCtrl.userString">
+			<div ng-class="myCtrl.userString">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aspernatur ea exercitationem facilis voluptates id, sit maiores expedita quasi consectetur! Beatae blanditiis maiores quidem, necessitatibus ex assumenda vero magni nemo.</div>
+
+			<h3>ng-class with an object</h3>
+			<input type="checkbox" ng-model="myCtrl.cssObject.redClass">redClass
+			<input type="checkbox" ng-model="myCtrl.cssObject.bold">bold
+			<div ng-class="myCtrl.cssObject">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum magnam earum atque sit sapiente commodi, dolores perferendis optio amet blanditiis ullam, nostrum aperiam totam neque alias sed nihil laudantium vitae?</div>
+
+
+
+
+
+
+
+
+
+<!-- 			<h3>Ng-model with text input</h3>
+			<input type="text" ng-model="myCtrl.student.name.fname">
+			{{ myCtrl.student.name.fname }}
+
+
+			<h3>Ng-model with a checkbox input</h3>
+			<input type="checkbox" ng-model="myCtrl.isChecked">
+			<div>Checkbox is checked: {{ myCtrl.isChecked }}</div> -->
+
+<!-- 
+			<h3>Ng-model with a radio button input with regular value</h3>
+			<input type="radio"
+				   name="season"
+				   value="fall"
+				   ng-model="myCtrl.seasonSelected">Fall
+			<input type="radio"
+				   name="season"
+				   value="winter"
+				   ng-model="myCtrl.seasonSelected">Winter
+			<input type="radio"
+				   name="season"
+				   value="spring"
+				   ng-model="myCtrl.seasonSelected">Spring
+			<input type="radio"
+				   name="season"
+				   value="summer"
+				   ng-model="myCtrl.seasonSelected">Summer
+
+			<div>The Selected Season is {{ myCtrl.seasonSelected }} </div> -->
+
+
+
+<!-- 			<h3>Ng-model with a radio button input and ng-value</h3>
+			<input type="radio"
+				   name="season"
+				   ng-value="myCtrl.fallSeason"
+				   ng-model="myCtrl.seasonSelected">Fall
+			<input type="radio"
+				   name="season"
+				   ng-value="myCtrl.winterSeason"
+				   ng-model="myCtrl.seasonSelected">Winter
+			<input type="radio"
+				   name="season"
+				   ng-value="myCtrl.springSeason"
+				   ng-model="myCtrl.seasonSelected">Spring
+			<input type="radio"
+				   name="season"
+				   ng-value="myCtrl.summerSeason"
+				   ng-model="myCtrl.seasonSelected">Summer
+
+			<div>The Selected Season is {{ myCtrl.seasonSelected.description }} </div> -->
+
+
+
+
+			
+			<h1 ng-bind="myCtrl.myName"></h1>
+
+			<h3>My Age {{ myCtrl.age }}</h3>
+
+			<div>I've been a {{ myCtrl.job }} for {{ 2 + 10 }} years</div>
+
+			<h3>String Array</h3>
+			<div ng-repeat="name in myCtrl.simpleNameArray">
+				{{ $index + 1 }}. {{ name }}
+
+				<div>Is first item: {{$first}}</div>
+				<div>Is last item: {{$last}}</div>
+			</div>
+		
+			<h3>Object Array</h3>
+			<div ng-repeat="object in myCtrl.objectsArray">
+				<label>First Name: </label><span ng-bind="object.fName"></span><br>
+				<label>Last Name: </label><span ng-bind="object.lName"></span><br>
+			</div>
+
+			<h3>ng-repeat with an Object</h3>
+			<div ng-repeat="(key, val) in myCtrl.dog">
+				<label>{{key}}: </label>{{val}}
+			</div>
+		</div>
+	</body>
+</html>

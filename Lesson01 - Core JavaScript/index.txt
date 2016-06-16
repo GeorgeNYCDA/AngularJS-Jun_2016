@@ -175,6 +175,7 @@ Object
 Array[3]
 ]
 
+
 // Closure
 
 function outer(a) {
@@ -194,6 +195,16 @@ var result2 = outer(12);
 console.log(result2(10));
 
 console.log(result(10));
+
+
+
+
+
+
+
+
+
+
 
 // scope inheritence
 

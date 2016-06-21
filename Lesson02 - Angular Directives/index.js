@@ -1,21 +1,30 @@
 var myModule = angular.module('MyApp', []);
 
 
-myModule.controller('MyController', function() {
+myModule.controller('MyController', function($scope) {
 	var self = this;
 
 
-	// self.student = {
-	// 	name: {
-	// 		fname: 'tom'
-	// 	}
-	// }
+	$scope.myDogsName = "Earl";
+
+	self.onUserClick = function() {
+		console.log('you clicked the button');
+		self.showContent = false;
+	}
 
 
-	self.cssObject = {
-		redClass: true,
-		bold: true
-	};
+	self.student = {
+		name: {
+			fname: 'tom'
+		}
+	}
+
+	self.showContent = true;
+
+	// self.cssObject = {
+	// 	redClass: true,
+	// 	bold: true
+	// };
 
 
 

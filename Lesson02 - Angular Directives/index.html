@@ -26,14 +26,34 @@
 	<body ng-app="MyApp">
 		<div ng-controller="MyController as myCtrl">
 
+			<button ng-click="myCtrl.onUserClick()">Click Me</button>
+			
+			{{myDogsName}}
+
+			<input type="checkbox" ng-model="myCtrl.showContent">Show
+			
+			<h3 ng-if="myCtrl.showContent">
+
+				<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur quia porro totam sequi fuga sunt accusantium repudiandae doloribus! Impedit suscipit atque enim sunt iusto repellendus optio veniam laboriosam perferendis tempore!</div>
+
+				<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem perferendis, ratione provident, quae nam obcaecati ipsa non necessitatibus nesciunt itaque quasi eligendi. Pariatur omnis magnam quisquam optio illo necessitatibus commodi?</div>
+
+				<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem perferendis, ratione provident, quae nam obcaecati ipsa non necessitatibus nesciunt itaque quasi eligendi. Pariatur omnis magnam quisquam optio illo necessitatibus commodi?</div>
+
+			</h3>
+			<h3 ng-hide="myCtrl.showContent">Element 2</h3>
+
+
+
+<!-- 
 			<h3>ng-class with a string</h3>
 			<input type="text" ng-model="myCtrl.userString">
-			<div ng-class="myCtrl.userString">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aspernatur ea exercitationem facilis voluptates id, sit maiores expedita quasi consectetur! Beatae blanditiis maiores quidem, necessitatibus ex assumenda vero magni nemo.</div>
+			<div ng-class="myCtrl.userString">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aspernatur ea exercitationem facilis voluptates id, sit maiores expedita quasi consectetur! Beatae blanditiis maiores quidem, necessitatibus ex assumenda vero magni nemo.</div> -->
 
-			<h3>ng-class with an object</h3>
+<!-- 			<h3>ng-class with an object</h3>
 			<input type="checkbox" ng-model="myCtrl.cssObject.redClass">redClass
 			<input type="checkbox" ng-model="myCtrl.cssObject.bold">bold
-			<div ng-class="myCtrl.cssObject">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum magnam earum atque sit sapiente commodi, dolores perferendis optio amet blanditiis ullam, nostrum aperiam totam neque alias sed nihil laudantium vitae?</div>
+			<div ng-class="myCtrl.cssObject">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum magnam earum atque sit sapiente commodi, dolores perferendis optio amet blanditiis ullam, nostrum aperiam totam neque alias sed nihil laudantium vitae?</div> -->
 
 
 
@@ -99,7 +119,7 @@
 
 
 			
-			<h1 ng-bind="myCtrl.myName"></h1>
+<!-- 			<h1 ng-bind="myCtrl.myName"></h1>
 
 			<h3>My Age {{ myCtrl.age }}</h3>
 
@@ -122,7 +142,7 @@
 			<h3>ng-repeat with an Object</h3>
 			<div ng-repeat="(key, val) in myCtrl.dog">
 				<label>{{key}}: </label>{{val}}
-			</div>
+			</div> -->
 		</div>
 	</body>
 </html>

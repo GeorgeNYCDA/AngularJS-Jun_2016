@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  	<head>
+
+	  	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.js"></script>
+
+	  	<script src="services.js"></script>
+	  	<script src="index.js"></script>
+
+	</head>
+	<body ng-app="MyApp" ng-controller="MyController as myCtrl">
+<!-- 		<h3>Countdown: {{myCtrl.countdown}}</h3>
+		<h3 ng-bind="myCtrl.name"></h3> -->
+
+
+		<input type="number"
+			   ng-model="myCtrl.car.year"
+			   ng-change="myCtrl.car.setYear(myCtrl.car.year)"
+			   placeholder="Enter Year"><br>
+		<div>
+			<label>Make: </label><span ng-bind="myCtrl.car.make"></span>
+		</div>
+		<div>
+			<label>Model: </label><span ng-bind="myCtrl.car.model"></span>
+		</div>
+		<div>
+			<label>Year: </label><span ng-bind="myCtrl.car.year"></span>
+		</div>
+		<div>
+			<label>Age: </label><span ng-bind="myCtrl.car.age"></span>
+		</div>
+	</body>
+</html>

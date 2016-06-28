@@ -1,6 +1,33 @@
-var myModule = angular.module('MyApp', ['MyServices']);
+angular.module('MyApp', ['MyServices'])
 
-myModule.controller('MyController', function($scope, $log, $timeout, $interval, Car) {
+.controller('TopController', function(NameHelper, GLOBAL_DOGS) {
+	var self = this;
+	self.dogs = angular.copy(GLOBAL_DOGS);
+
+
+	self.person = {
+		fname: 'George',
+		lname: 'Dagher'
+	};
+
+	self.fullName = NameHelper.getFullName(self.person);
+
+	console.log('Full Name: ', NameHelper.getFullName(self.person))
+
+
+})
+
+.controller('BottomController', function(GLOBAL_DOGS) {
+	var self = this;
+
+	var copy = angular.copy(GLOBAL_DOGS)
+
+	self.popDog = function() {
+		copy.pop();
+	}
+})
+
+.controller('MyController', function($scope, $log, $timeout, $interval, Car, GLOBAL_DOGS) {
 	var self = this;
 
 	self.car = new Car('Honda', 'Accord', 1990);

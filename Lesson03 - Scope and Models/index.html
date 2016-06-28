@@ -8,11 +8,35 @@
 	  	<script src="index.js"></script>
 
 	</head>
-	<body ng-app="MyApp" ng-controller="MyController as myCtrl">
-<!-- 		<h3>Countdown: {{myCtrl.countdown}}</h3>
-		<h3 ng-bind="myCtrl.name"></h3> -->
+	<body ng-app="MyApp" >
 
 
+
+	<div ng-controller="TopController as topCtrl">
+		<div ng-repeat="dog in topCtrl.dogs">{{dog.name}}</div>
+	</div>
+
+	<div ng-controller="BottomController as bottomCtrl">
+		<button ng-click="bottomCtrl.popDog()">Pop</button>
+	</div>
+
+
+
+
+
+
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+
+
+	<div ng-controller="MyController as myCtrl">
+	<!-- 		<h3>Countdown: {{myCtrl.countdown}}</h3>
+			<h3 ng-bind="myCtrl.name"></h3> -->
 		<input type="number"
 			   ng-model="myCtrl.car.year"
 			   ng-change="myCtrl.car.setYear(myCtrl.car.year)"
@@ -29,5 +53,7 @@
 		<div>
 			<label>Age: </label><span ng-bind="myCtrl.car.age"></span>
 		</div>
+	</div>
+
 	</body>
 </html>

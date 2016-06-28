@@ -1,6 +1,32 @@
-var myModule = angular.module('MyServices', []);
+angular.module('MyServices', [])
 
-myModule.factory('Car', function() {
+
+
+.service('NameHelper', function(GLOBAL_DOGS) {
+	var self = this;
+
+	var userKey = 123;
+
+	self.getFullName = function(person) {
+		return person.fname + ' ' + person.lname;
+	};
+
+	self.getMakeAndModel = function(car) {
+		return car.make + ' ' + car.model;
+	};
+})
+
+.value('GLOBAL_DOGS', [{
+	name: 'max',
+	age: 12
+}, {
+	name: 'snoop',
+	age: 5
+}])
+
+.value('API_KEY', '123456')
+
+.factory('Car', function(NameHelper) {
 
 	function Car(make, model, year) {
 	   this.make = make;
@@ -19,4 +45,4 @@ myModule.factory('Car', function() {
 	};
 
 	return Car;
-})
+});

@@ -35,14 +35,11 @@
 			.$promise
     	};
 
-
         self.getFriends = function(friend) {
             return myFriendsResource.query({
                 userId: friend._id
             }).$promise
-        }
-
-
+        };
 
     	/* Example of a POST request with passing info through the body */
 
@@ -64,7 +61,9 @@
 		MainControllerDataService.getPeople()
 		.then(function onSuccess(response) {
 			self.people = response;
-		});
+		}, function onError(error) {
+            console.log(error);
+        });
 
 
         self.showFriends = function(person) {
@@ -72,7 +71,7 @@
             .then(function (response) {
                 person.friends = response;
             })
-        }
+        };
     });
 
 })();

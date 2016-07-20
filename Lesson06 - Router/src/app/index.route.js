@@ -19,6 +19,13 @@
       templateUrl: 'app/contacts/partials/contacts.html',
       controller: 'ContactsController as ctrl'
     })
+    .state('user-home', {
+      url: '/user-home/:id',
+      templateUrl: 'app/home/partials/user-home.html',
+      controller: 'UserHomeController as ctrl'
+    })
+
+
     .state('contacts.ceo', {
       url: '/ceo',
       templateUrl: 'app/contacts/partials/ceo.html',
@@ -32,14 +39,31 @@
       templateUrl: 'app/contacts/partials/founder.html',
     })
 
-
-
-
     .state(UI_STATES.STORE, {
       url: '/store',
       templateUrl: 'app/store/partials/store.html',
       controller: 'StoreController as ctrl'
-    });
+    })
+    .state('store.shoes', {
+      views: {
+        listView: {
+          templateUrl: 'app/store/partials/shoesList.html',
+        },
+        detailView: {
+          templateUrl: 'app/store/partials/shoesDetail.html',
+        }
+      }
+    })
+    .state('store.shirts', {
+      views: {
+        listView: {
+          templateUrl: 'app/store/partials/shirtList.html',
+        },
+        detailView: {
+          templateUrl: 'app/store/partials/shirtDetail.html',
+        }
+      }
+    });;
 
 
     $urlRouterProvider.otherwise('/')

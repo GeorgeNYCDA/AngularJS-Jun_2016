@@ -6,7 +6,7 @@
 
 	angular.module('MyApp.Home')
 
-	.controller('HomeController', function(UI_STATES, MyFactory, MyService, MyCustomUser) {
+	.controller('HomeController', function($state, UI_STATES, MyFactory, MyService, MyCustomUser) {
 		var self = this;
 
 		self.context = savedContext;
@@ -17,6 +17,11 @@
 		MyService.someFunction();
 
 		console.log('HomeController created');
+
+		self.goToUser = function(userNum) {
+			console.log(userNum);
+			$state.go('user-home', {id: userNum});
+		};
 	})
 })();
 

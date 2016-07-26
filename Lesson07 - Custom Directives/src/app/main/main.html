@@ -1,0 +1,41 @@
+<div class="container">
+
+
+	<h3>{{ctrl.greeting}}</h3>
+
+
+	<div ng-repeat="folder in ctrl.folders" gd-folder>
+		<input type="checkbox" ng-model="folderCtrl.isExpanded"> Expanded
+		<ul>
+			<li>
+				{{folder.name}}
+				<ul ng-show="folderCtrl.isExpanded">
+					<li ng-repeat="file in folder.files" ng-bind="file"></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 	<div gd-basic-controlled></div>
+	<div gd-basic-controlled></div>
+	<div gd-basic-controlled></div> -->
+
+	<!-- <div gd-basic></div> -->
+	<!-- <gd-basic></gd-basic> -->
+
+	<!-- <div gd-basic-url> </div> -->
+
+	<!-- <gd-basic-url> </gd-basic-url> -->
+
+</div>

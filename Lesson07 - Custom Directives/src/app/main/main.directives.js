@@ -5,10 +5,78 @@
     .module('template')
 
 
+    .directive('gdTransclude', function() {
+        return {
+            templateUrl: 'app/main/partials/gd-transclude.html',
+            transclude: true,
+            link: function(scope, element, attributes) {
+                console.log(attributes.color)
+                element.on('click', function() {
+                    this.style.display = 'none';
+                });
+            }
+        }
+    })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    .directive('gdExpand', function() {
+        return {
+            controller: 'GDExpandController as expandCtrl',
+            templateUrl: 'app/main/partials/gd-expand.html',
+            bindToController: true,
+            scope: {
+                toExpand: '=',
+                position: '@',
+                onEditClicked: '&'
+            }
+        };
+    })
+    .controller('GDExpandController', function() {
+        var self = this;
+        self.edit = function() {
+            self.onEditClicked({
+                miso: self.toExpand
+            });
+        };
+    })
+
+
+
+
+
+
+
+
+
+
 
 
     .directive('gdFolder', function() { 
     	return {
+            templateUrl: 'app/main/partials/gd-folder.html',
     		controller: 'GdFolderController as folderCtrl',
     		// scope: true,
     		// scope: false,

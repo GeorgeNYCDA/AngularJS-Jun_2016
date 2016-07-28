@@ -1,0 +1,11 @@
+<input type="checkbox" ng-model="folderCtrl.isExpanded"> Expanded
+<ul>
+	<li>
+		{{folder.name}}
+		<ul ng-show="folderCtrl.isExpanded">
+			<li ng-repeat="file in folder.items">
+				{{file}}
+			</li>
+		</ul>
+	</li>
+</ul>

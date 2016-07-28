@@ -1,0 +1,13 @@
+<ul>
+	<li>
+		<input type="checkbox" ng-model="expandCtrl.isExpanded"> 
+		{{ expandCtrl.position }}: {{expandCtrl.toExpand.name}}
+
+		<button ng-click="expandCtrl.edit()">Edit</button>
+		<ul ng-show="expandCtrl.isExpanded">
+			<li ng-repeat="item in expandCtrl.toExpand.items">
+				{{item}}
+			</li>
+		</ul>
+	</li>
+</ul>

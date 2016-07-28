@@ -1,31 +1,33 @@
 <div class="container">
 
 
-	<h3>{{ctrl.greeting}}</h3>
 
 
-	<div ng-repeat="folder in ctrl.folders" gd-folder>
-		<input type="checkbox" ng-model="folderCtrl.isExpanded"> Expanded
-		<ul>
-			<li>
-				{{folder.name}}
-				<ul ng-show="folderCtrl.isExpanded">
-					<li ng-repeat="file in folder.files" ng-bind="file"></li>
-				</ul>
-			</li>
-		</ul>
+	<div gd-transclude color="red">
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur, reiciendis voluptates perferendis, numquam maiores voluptas facere non molestias aliquid ea consectetur, assumenda impedit quam minima quaerat ad officia provident! Expedita!
 	</div>
 
 
 
+<!-- 	<h3>{{ctrl.greeting}}</h3>
 
 
+	<h3>Expand a person</h3>
+	<div gd-expand 
+		 to-expand="ctrl.person" 
+		 position="1"
+		 on-edit-clicked="ctrl.handleEdit(miso)">
+	</div>
 
-
-
-
-
-
+	<h3>Expand folders</h3>
+	<div ng-repeat="folder in ctrl.folders">
+		<div gd-expand 
+			 to-expand="folder" 
+			 position="{{$index+1}}"
+			 on-edit-clicked="ctrl.handleEdit(miso)">
+		</div>
+	</div>
+ -->
 
 <!-- 	<div gd-basic-controlled></div>
 	<div gd-basic-controlled></div>

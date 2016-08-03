@@ -1,0 +1,49 @@
+<div class="container">
+  
+  <!-- <pre>{{ctrl.myFormManager | json}}</pre> -->
+
+  <form name="ctrl.myFormManager" novalidate ng-submit="ctrl.onSubmitClicked()">
+
+  	<input type="text"
+  		   placeholder="First Name"
+  		   ng-model="ctrl.firstName"
+  		   required><br>
+
+  	<input type="email"
+	  	   placeholder="Email"
+	  	   ng-model="ctrl.email"
+	  	   required><br>
+
+	<input type="text"
+		   placeholder="Phone"
+		   name="phoneInput"
+		   ng-model="ctrl.phone"
+		   ng-pattern="/^\(\d\d\d\) \d\d\d-\d\d\d\d$/">
+	<span ng-show="ctrl.myFormManager.phoneInput.$invalid">The phone number needs to be in this format (###) ###-####</span>
+
+
+	<select ng-model="ctrl.state" 
+	        ng-options="state.abbr as state.name for state in ctrl.states">
+
+	</select>
+
+<!-- 	
+	Using ng-repeat to display the options
+
+	<select ng-model="ctrl.state">
+	    
+
+			<option ng-repeat="state in ctrl.states" ng-value="$index">{{state.name}}</option>
+	</select> -->
+
+	<pre>{{ctrl.state}}</pre>
+
+	<input type="submit"
+		   ng-disabled="ctrl.myFormManager.$invalid"
+		   value="Submit My Form"
+		   class="btn btn-primary">
+
+  	
+  </form>
+
+</div>

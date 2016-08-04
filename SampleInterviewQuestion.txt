@@ -1,0 +1,22 @@
+given functions like 
+
+	function add(a, b) {
+		return a + b;
+	}
+
+	function multiply(a, b) {
+		return a * b;
+	}
+
+write a function applyFn that will accept a function return a function that can be called repeatedly.
+
+eg:
+	var myFunc = applyFn(add);
+	myFunc(3)(5)  // should return 8
+
+	var myFunc2 = applyFn(multiply);
+	myFunc2(2)(5)  // should return 10
+
+	function applyFn(fn) {
+		
+	}

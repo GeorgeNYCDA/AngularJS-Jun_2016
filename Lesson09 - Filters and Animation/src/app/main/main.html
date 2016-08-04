@@ -1,0 +1,46 @@
+<div class="container">
+  <h1>{{ ctrl.greeting }}</h1>
+
+  <!-- <input type="text" class="form-control" ng-model="ctrl.searchText" placeholder="Search"> -->
+  <input type="text" 
+  	     class="form-control" 
+  	     ng-model="ctrl.searchObject.$"
+  	     ng-change="ctrl.filterChanged()"
+  	     placeholder="Fuzzy">
+  <input type="text" 
+  	     class="form-control" 
+  	     ng-model="ctrl.searchObject.firstName"
+  	     ng-change="ctrl.filterChanged()"
+  	     placeholder="First">
+  <input type="text" 
+  	     class="form-control" 
+  	     ng-model="ctrl.searchObject.lastName"
+  	     ng-change="ctrl.filterChanged()"
+  	     placeholder="Last">
+  <input type="text" 
+  	     class="form-control" 
+  	     ng-model="ctrl.searchObject.job"
+  	     ng-change="ctrl.filterChanged()"
+  	     placeholder="Job">
+
+<!--   <div ng-repeat="person in ctrl.people | filter :ctrl.searchObject | orderBy :'lastName'"> -->
+
+	<button ng-click="ctrl.addPerson()">Add</button>
+
+
+  <div ng-repeat="person in ctrl.people" class="person">
+
+	<label>First:</label> {{person.firstName | uppercase}}<br>
+
+	<label>Last:</label> {{person.lastName}}<br>
+
+	<label>Job:</label> {{person.job}}<br>
+
+	<button ng-click="ctrl.deletePerson(person)">Delete</button>
+	<br><br>
+  </div>
+
+  <input type="text" name="hello" ng-model="ctrl.phone">
+
+  {{ctrl.phone | phoneSwap }}
+</div>
